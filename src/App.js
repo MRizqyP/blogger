@@ -1,9 +1,19 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import "./assets/css/bootstrap.min.css";
+import Navbar from "./component/navbar";
+import Mainarea from "./component/mainarea";
 
 function App() {
-  return <div className="App">HY MY NAME IS RIZQY</div>;
+  return (
+    <div>
+      <Navbar />
+      <main class="site-main">
+        <Mainarea />
+      </main>
+    </div>
+  );
 }
 
 export default App;
