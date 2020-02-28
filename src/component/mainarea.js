@@ -12,7 +12,7 @@ export default class mainarea extends Component {
               <h3 class="title-text"> Hey</h3>
               <h1 class="title-text text-uppercase">I am Kinyot</h1>
               <h4 class="title-text text-uppercase">
-                senior android developer
+                junior android developer
               </h4>
               <div class="site-buttons">
                 <div class="d-flex flex-row flex-wrap">

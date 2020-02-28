@@ -2,7 +2,7 @@
 
 @import url(./fonts.css);
 @import url(./partials/_variables.css);
-
+@import url(./partials/_globe.css);
 /*start navigation*/
 
 .header_area .main-menu .navbar .navbar-brand {
@@ -69,4 +69,20 @@
 .site-banner .banner-image > img {
   padding: 7rem 0;
   width: 90rem;
+}
+
+/* start about area */
+
+.about-area {
+  padding: 8rem 5rem;
+}
+
+.about-area .about-title h2 > span {
+  display: block;
+  font: normal bold 49px/60px var(--roboto);
+  letter-spacing: 21px;
+}
+
+.about-area .about-title .paragraph > p {
+  padding: 0.8rem 0rem;
 }
