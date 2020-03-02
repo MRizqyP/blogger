@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/bootstrap.min.css";
-import "../assets/css/style.css";
+// import "../assets/css/style.css";
 export default function aboutarea() {
   return (
     <section class="about-area">

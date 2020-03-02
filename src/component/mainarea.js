@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../assets/css/bootstrap.min.css";
-import "../assets/css/style.css";
+// import "../assets/css/style.css";
 
 export default class mainarea extends Component {
   render() {
