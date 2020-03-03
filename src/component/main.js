@@ -11,7 +11,6 @@ const Main = props => {
       <Container fluid={true} className="mt-2">
         <Col>{props.children}</Col>
         <Col>
-          {" "}
           <div class="footer-copyright text-center py-3">
             © 2020 Copyright: KINYOT :P
           </div>

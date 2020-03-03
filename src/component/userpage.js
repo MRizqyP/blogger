@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function userpage() {
-  return <div>ini adalah halaman user</div>;
+export default class userpage extends Component {
+  render() {
+    return <div>ini adalah hal user</div>;
+  }
 }

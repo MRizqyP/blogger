@@ -1,5 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function home() {
-  return <div>INI ADALAH HOME</div>;
+export default class home extends Component {
+  render() {
+    return (
+      <div>
+        <p>Ini adalah halaman HOME</p>
+        <img class="wave" src="img/login/wave.png" />
+      </div>
+    );
+  }
 }

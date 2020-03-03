@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function adminpage() {
-  return <div>Ini adalah halaman admin</div>;
+export default class adminpage extends Component {
+  render() {
+    return <div>ini adalah halaman ADMIN</div>;
+  }
 }

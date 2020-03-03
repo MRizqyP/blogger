@@ -10,7 +10,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LOGIN from "./component/login/login";
 import REGISTER from "./component/register/register";
 import ADMINPAGE from "./component/adminpage";
-
+import USERLIST from "./component/admin/userlist";
+import DASHBOARD from "./component/user/dashboard";
+import MAKEARTIKEL from "./component/user/buatartikel";
+import USERCONTENT from "./component/user/usercontent";
+import LISTARTIKEL from "./component/admin/listartikel";
 // console.log(token);
 
 function getRole() {}
@@ -37,6 +41,9 @@ const routing = (
               <>
                 <Switch>
                   <Route exact path="/" component={App} />
+                  <Route path="/dashboard" component={DASHBOARD} />
+                  <Route path="/buatartikel" component={MAKEARTIKEL} />
+                  <Route path="/listcontent" component={USERCONTENT} />
                   {/* <Route path="/buku" component={GETUSER} />
                   <Route path="/listorder" component={LISTORDER} /> */}
                   <Route component={Notfound} />
@@ -47,15 +54,20 @@ const routing = (
             return (
               <Switch>
                 <Route exact path="/adminpage" component={ADMINPAGE} />
-                {/* <Route path="/get" component={GET} />
-                <Route path="/post" component={POST} />
-                <Route path="/getbyid" component={GETBYID} />
+                <Route path="/userlist" component={USERLIST} />
+                <Route path="/listartikel" component={LISTARTIKEL} />
+                {/*<Route path="/getbyid" component={GETBYID} />
                 <Route path="/put/:id" component={PUT} />
                 <Route path="/login" component={LOGIN} />
                 <Route path="/listuser" component={LISTUSER} />
                 <Route path="/listorder" component={LISTORDER} />
                 <Route path="/nyoba" component={nyoba} />
-                <Route path="/listorderadmin/:id" component={LISTORDERADMIN} /> */}
+                <Route
+                  path="/listorderadmin/:id"
+                  component={LISTORDERADMIN}
+                />{" "}
+                */}{" "}
+                */}
                 <Route component={Notfound} />
               </Switch>
             );

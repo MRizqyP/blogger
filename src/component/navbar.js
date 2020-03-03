@@ -21,7 +21,7 @@ function App() {
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
-              <img src="./logokinyot.png" alt="logo" width="60%" />
+              <img src="./logokinyot.png" alt="logo" width="50%" />
             </a>
             <button
               class="navbar-toggler"
@@ -86,43 +86,37 @@ function App() {
             <div class="collapse navbar-collapse" id="navbarNav">
               <div class="mr-auto"></div>
               <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">
-                    Home <span class="sr-only">(current)</span>
-                  </a>
-                </li>
+                <Link to="/userlist">
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Dashboard <span class="sr-only"></span>
+                    </a>
+                  </li>
+                </Link>
+                <Link to="/listartikel">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      Article
+                    </a>
+                  </li>
+                </Link>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    about
+                    Comment
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    services
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    pages
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    blog
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    contact
-                  </a>
-                </li>
+                <Link onClick={logout} to="/login">
+                  <li class="nav-item">
+                    <a class="nav-link">Logout</a>
+                  </li>
+                </Link>
               </ul>
             </div>
           </nav>
         </div>
       </header>
     );
-  } else if (token.token.status === false) {
+  } else if (token.token.admin === false) {
     return (
       <header class="header_area">
         <div className="main-menu">
@@ -144,36 +138,28 @@ function App() {
             <div class="collapse navbar-collapse" id="navbarNav">
               <div class="mr-auto"></div>
               <ul class="navbar-nav">
-                <li class="nav-item active">
+                <Link to="/dashboard">
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      Dashboard <span class="sr-only"></span>
+                    </a>
+                  </li>
+                </Link>
+                <li class="nav-item">
                   <a class="nav-link" href="#">
-                    Home <span class="sr-only">(current)</span>
+                    Search
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    about
+                    Artikel
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    services
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    pages
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    blog
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    contact
-                  </a>
-                </li>
+                <Link onClick={logout} to="/login">
+                  <li class="nav-item">
+                    <a class="nav-link">Logout</a>
+                  </li>
+                </Link>
               </ul>
             </div>
           </nav>
