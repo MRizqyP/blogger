@@ -109,6 +109,7 @@ const Register = props => {
             <div class="form-group mb-5">
               <label for="cpassword">Confirm Password</label>
               <input
+                name="cpassword"
                 type="password"
                 class="form-control"
                 ref={register({

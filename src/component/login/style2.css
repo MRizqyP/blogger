@@ -167,7 +167,7 @@ form h2 {
   color: #555555;
   font-family: var(--roboto);
 }
-
+/* 
 a {
   display: block;
   text-align: right;
@@ -188,7 +188,7 @@ a {
 
 a:hover {
   color: #38d39f;
-}
+} */
 
 .btn {
   display: block;
@@ -251,9 +251,58 @@ a:hover {
   transition: 0.5s;
 }
 
+.btnview {
+  display: block;
+  width: 60%;
+  height: 50px;
+  border-radius: 10px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: none;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--roboto);
+  background-size: 200%;
+  transition: 0.5s;
+}
+.btnshare {
+  display: block;
+  width: 20%;
+  /* margin-top: 1rem; */
+  height: 40px;
+  border-radius: 10px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: none;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--roboto);
+  background-size: 200%;
+  transition: 0.5s;
+}
+
+.btnhapus {
+  display: block;
+  width: 40%;
+  margin-top: 1rem;
+  height: 40px;
+  border-radius: 10px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: none;
+  background-image: linear-gradient(to right, #ff6366, #ff9800, #ff6366);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--roboto);
+  background-size: 200%;
+  transition: 0.5s;
+}
+
 .site-content {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 70% 30%;
 }
 
 /* .site-content .posts {
@@ -281,7 +330,7 @@ a:hover {
   padding: 0.5rem;
   position: absolute;
   bottom: 0%;
-  left: 21.5vw;
+  left: 25vw;
   border-radius: 3rem;
 }
 
@@ -290,7 +339,8 @@ a:hover {
 }
 
 .site-content .post-content > .post-image .img {
-  width: 25%;
+  background: url(../admin/gambar.jpg);
+  width: 70%;
   transition: all 1s ease;
 }
 
@@ -330,6 +380,99 @@ a:hover {
   background-position: right;
 }
 
+.widget-area.blank {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+.widget-area {
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  float: left;
+  margin-top: 5px;
+  padding: 25px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.status-upload {
+  background: none repeat scroll 0 0 #f5f5f5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  width: 100%;
+}
+.status-upload form {
+  float: left;
+  width: 100%;
+}
+.status-upload form textarea {
+  background: none repeat scroll 0 0 #fff;
+  border: medium none;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  color: #777777;
+  float: left;
+  font-family: Lato;
+  font-size: 14px;
+  height: 142px;
+  letter-spacing: 0.3px;
+  padding: 15px;
+  width: 100%;
+  resize: vertical;
+  outline: none;
+  border: 1px solid #f2f2f2;
+}
+.status-upload form button {
+  border: medium none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  float: right;
+  font-family: Lato;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-right: 9px;
+  margin-top: 9px;
+  padding: 6px 15px;
+}
+
+.user_name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.comments-list .media {
+  border-bottom: 1px dotted #ccc;
+}
+
+.pull-right {
+  align-items: right;
+}
+
+.fa {
+  text-transform: uppercase;
+}
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;

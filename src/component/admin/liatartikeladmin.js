@@ -2,21 +2,19 @@ import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import USERCONTENT from "./usercontent";
 import axios from "axios";
-import moment from "moment";
 
-function Dashboard() {
+function Dashboard(props) {
   const token = JSON.parse(
     sessionStorage.getItem("persisted_state_hook:token")
   );
 
   const [data, setData] = useState([]);
-  const id = token.token.id;
+  const id = props.match.params.id;
   useMemo(() => {
-    const id = token.token.id;
     const fetchData = async () => {
       const result = await axios({
         method: "get",
-        url: "http://localhost:8085/artikel/" + id,
+        url: "http://localhost:8085/artikell/" + id,
         headers: {
           Authorization: token.token.accessToken
         }
@@ -29,53 +27,54 @@ function Dashboard() {
       alert(err);
     }
   }, []);
-  console.log(data);
+  console.log(id);
 
   const render = () => {
     return data.map((data, id) => {
-      let total_komentar = data.komentars.length;
       return (
         <div class="post-content" key={id}>
-          <hr />
-          <p> List Artikel</p>
-          <hr />
           <div class="post-image">
+            <h1>{data.judul}</h1>
+            <h6> Kinyot Blogging - {data.createdAt} </h6>
+
+            <hr />
             <div>
               <center>
-                <img src="./img/gambar.jpg" alt="" class="img"></img>
+                <img src="/gambar.jpg" alt="" class="img"></img>
               </center>
             </div>
-            <div class="post-info flex-row">
+            {/* <div class="post-info flex-row">
               <span>
-                <i class="fa fa-user">&nbsp;&nbsp;{data.user.name}</i>
+                <i class="fa fa-user">&nbsp;&nbsp;Admin</i>
               </span>
 
               <span>
-                <i class="fa fa-calendar">
-                  &nbsp;&nbsp;
-                  {moment(data.createdAt).format("DD / MMMM / YYYY")}
-                </i>
+                <i class="fa fa-calendar">&nbsp;&nbsp;Januari 19, 2019</i>
               </span>
-              <span>{total_komentar} Comment</span>
-              <span>
-                {(() => {
-                  if (data.status === true) {
-                    return <span> AKTIF</span>;
-                  } else {
-                    return <span> TIDAK AKTIF </span>;
-                  }
-                })()}
-              </span>
-            </div>
+              <span>2 Comments</span>
+            </div> */}
           </div>
           <div class="post-title">
-            <a>{data.judul}</a>
-            <p>{data.isiartikel}</p>
-            <Link to={"/viewartikel/" + data.id_artikel}>
-              <button class="btn post-btn">
-                Read More <i class="fa fa-arrow-right"></i>
-              </button>
-            </Link>
+            <p>{data.isiartikel}</p>edan lah
+          </div>
+          <div class="row">
+            <h3>Status Upload Snipp</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                  <form>
+                    <textarea placeholder="What are you doing right now?"></textarea>
+
+                    <button type="submit" class="btn btn-success green">
+                      <i class="fa fa-share"></i> Share
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );
@@ -85,10 +84,6 @@ function Dashboard() {
   return (
     <div>
       <div class="limiter">
-        <Link to="/buatartikel">
-          <button class="btnartikel"> Buat Artikel</button>
-        </Link>
-
         <div>
           <section>
             <div class="site-content">

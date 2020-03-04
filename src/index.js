@@ -15,9 +15,10 @@ import DASHBOARD from "./component/user/dashboard";
 import MAKEARTIKEL from "./component/user/buatartikel";
 import USERCONTENT from "./component/user/usercontent";
 import LISTARTIKEL from "./component/admin/listartikel";
-// console.log(token);
+import VIEWARTIKEL from "./component/user/liatartikel";
+import ARTIKEL from "./component/user/allartikel";
+import GUESTARTIKEL from "./component/user/guestartikel";
 
-function getRole() {}
 const token = JSON.parse(sessionStorage.getItem("persisted_state_hook:token"));
 
 const routing = (
@@ -32,6 +33,8 @@ const routing = (
                   <Route exact path="/" component={App} />
                   <Route path="/login" component={LOGIN} />
                   <Route path="/register" component={REGISTER} />
+                  <Route path="/artikel" component={ARTIKEL} />
+                  <Route path="/viewartikel/:id" component={GUESTARTIKEL} />
                   <Route component={Notfound} />
                 </Switch>
               </>
@@ -44,8 +47,8 @@ const routing = (
                   <Route path="/dashboard" component={DASHBOARD} />
                   <Route path="/buatartikel" component={MAKEARTIKEL} />
                   <Route path="/listcontent" component={USERCONTENT} />
-                  {/* <Route path="/buku" component={GETUSER} />
-                  <Route path="/listorder" component={LISTORDER} /> */}
+                  <Route path="/artikel" component={ARTIKEL} />
+                  <Route path="/viewartikel/:id" component={VIEWARTIKEL} />
                   <Route component={Notfound} />
                 </Switch>
               </>
@@ -56,18 +59,7 @@ const routing = (
                 <Route exact path="/adminpage" component={ADMINPAGE} />
                 <Route path="/userlist" component={USERLIST} />
                 <Route path="/listartikel" component={LISTARTIKEL} />
-                {/*<Route path="/getbyid" component={GETBYID} />
-                <Route path="/put/:id" component={PUT} />
-                <Route path="/login" component={LOGIN} />
-                <Route path="/listuser" component={LISTUSER} />
-                <Route path="/listorder" component={LISTORDER} />
-                <Route path="/nyoba" component={nyoba} />
-                <Route
-                  path="/listorderadmin/:id"
-                  component={LISTORDERADMIN}
-                />{" "}
-                */}{" "}
-                */}
+                <Route path="/viewartikel/:id" component={VIEWARTIKEL} />
                 <Route component={Notfound} />
               </Switch>
             );

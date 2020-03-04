@@ -15,13 +15,15 @@ function App() {
     sessionStorage.clear();
   }
 
+  // console.log(token.token.admin);
+
   if (!token) {
     return (
       <header class="header_area">
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
-              <img src="./logokinyot.png" alt="logo" width="50%" />
+              <img src="/logokinyot.png" alt="logo" width="60%" />
             </a>
             <button
               class="navbar-toggler"
@@ -58,6 +60,13 @@ function App() {
                     </a>
                   </li>
                 </Link>
+                <Link to="/artikel">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      ARTICLE
+                    </a>
+                  </li>
+                </Link>
               </ul>
             </div>
           </nav>
@@ -70,7 +79,7 @@ function App() {
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
-              <img src="./logokinyot.png" alt="logo" width="60%" />
+              <img src="/logokinyot.png" alt="logo" width="60%" />
             </a>
             <button
               class="navbar-toggler"
@@ -122,7 +131,7 @@ function App() {
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
-              <img src="./logokinyot.png" alt="logo" width="60%" />
+              <img src="/logokinyot.png" alt="logo" width="60%" />
             </a>
             <button
               class="navbar-toggler"
@@ -150,11 +159,13 @@ function App() {
                     Search
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Artikel
-                  </a>
-                </li>
+                <Link to="/artikel">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      Artikel
+                    </a>
+                  </li>
+                </Link>
                 <Link onClick={logout} to="/login">
                   <li class="nav-item">
                     <a class="nav-link">Logout</a>

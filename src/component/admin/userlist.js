@@ -62,48 +62,55 @@ export default function Userlist() {
   let no = 1;
   const render = () => {
     return data.map((data, id) => {
-      return (
-        <tr key={id}>
-          <td text-align="center">{no++}</td>
-          <td>{data.name}</td>
-          <td>{data.username}</td>
-          <td>{data.email}</td>
-          <td>
-            <center>
-              {(() => {
-                if (data.status === true) {
-                  return (
-                    <p>
-                      <input
-                        type="submit"
-                        class="btnblock"
-                        value="BLOCK"
-                        onClick={() => block(data.id_user)}
-                      />
-                    </p>
-                  );
-                } else if (data.status === false) {
-                  return (
-                    <p>
-                      <input
-                        type="submit"
-                        class="btnactive"
-                        value="ACTIVE"
-                        onClick={() => active(data.id_user)}
-                      />
-                    </p>
-                  );
-                }
-              })()}
-            </center>
-          </td>
-        </tr>
-      );
+      if (data.admin === false) {
+        return (
+          <tr key={id}>
+            <td text-align="center">{no++}</td>
+            <td>{data.name}</td>
+            <td>{data.username}</td>
+            <td>{data.email}</td>
+            <td>
+              <center>
+                {(() => {
+                  if (data.status === true) {
+                    return (
+                      <p>
+                        <input
+                          type="submit"
+                          class="btnblock"
+                          value="BLOCK"
+                          onClick={() => block(data.id_user)}
+                        />
+                      </p>
+                    );
+                  } else if (data.status === false) {
+                    return (
+                      <p>
+                        <input
+                          type="submit"
+                          class="btnactive"
+                          value="ACTIVE"
+                          onClick={() => active(data.id_user)}
+                        />
+                      </p>
+                    );
+                  }
+                })()}
+              </center>
+            </td>
+          </tr>
+        );
+      }
     });
   };
 
   return (
     <div>
+      <center>
+        <p>
+          <h2>List User</h2>
+        </p>
+      </center>
       <div class="limiter">
         <div class="container-table100">
           <div class="wrap-table100">

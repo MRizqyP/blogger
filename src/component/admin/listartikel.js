@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import moment from "moment";
 // import "../assets/css/bootstrap.min.css";
 import "./bootstrap.min.css";
 import "./main.css";
@@ -33,7 +33,7 @@ export default function Userlist() {
   async function block(no) {
     await axios({
       method: "put",
-      url: `http://localhost:8085/blockuser/${no}`,
+      url: `http://localhost:8085/artikel/${no}`,
       headers: {
         Authorization: token.token.accessToken
       },
@@ -47,7 +47,7 @@ export default function Userlist() {
   async function active(no) {
     await axios({
       method: "put",
-      url: `http://localhost:8085/blockuser/${no}`,
+      url: `http://localhost:8085/artikel/${no}`,
       headers: {
         Authorization: token.token.accessToken
       },
@@ -56,6 +56,23 @@ export default function Userlist() {
       }
     });
     window.location.reload("/userlist");
+  }
+  async function hapus(no) {
+    await axios({
+      method: "delete",
+      url: `http://localhost:8085/artikel`,
+      headers: {
+        Authorization: token.token.accessToken
+      },
+      data: {
+        id_artikel: no
+      }
+    });
+    window.location.reload("/listartikel");
+  }
+
+  function pindah(no) {
+    window.location.replace("/viewartikel/" + no);
   }
 
   let no = 1;
@@ -66,7 +83,7 @@ export default function Userlist() {
           <td text-align="center">{no++}</td>
           <td>{data.user.name}</td>
           <td>{data.judul}</td>
-          <td>{data.createdAt}</td>
+          <td> {moment(data.createdAt).format("DD / MMMM / YYYY")}</td>
           <td>
             <center>
               {(() => {
@@ -77,7 +94,7 @@ export default function Userlist() {
                         type="submit"
                         class="btnblock"
                         value="HIDE"
-                        onClick={() => block(data.id_user)}
+                        onClick={() => block(data.id_artikel)}
                       />
                     </p>
                   );
@@ -88,7 +105,7 @@ export default function Userlist() {
                         type="submit"
                         class="btnactive"
                         value="PUBLISH"
-                        onClick={() => active(data.id_user)}
+                        onClick={() => active(data.id_artikel)}
                       />
                     </p>
                   );
@@ -97,13 +114,23 @@ export default function Userlist() {
             </center>
           </td>
           <td>
-            {" "}
+            <center>
+              <button
+                type="button"
+                class="btnview btn-warning"
+                onClick={() => pindah(data.id_artikel)}
+              >
+                <i class="fa fa-eye"></i>
+              </button>
+            </center>
+          </td>
+          <td>
             <button
               type="button"
-              class="btn-warning"
-              //   onClick={() => pinjam(data.id)}
+              class="btnhapus btn-warning"
+              onClick={() => hapus(data.id_artikel)}
             >
-              <i class="fa fa-eye"></i>
+              <i class="fa fa-trash"></i>
             </button>
           </td>
         </tr>
@@ -114,18 +141,24 @@ export default function Userlist() {
   return (
     <div>
       <div class="limiter">
+        <center>
+          <p>
+            <h2>List Artikel</h2>
+          </p>
+        </center>
         <div class="container-table100">
           <div class="wrap-table100">
             <div class="table100">
               <table>
                 <thead>
                   <tr class="table100-head">
-                    <th class="column1">No</th>
-                    <th class="column2">Nama</th>
-                    <th class="column3">Username</th>
-                    <th>Email</th>
-                    <th>Status</th>
+                    <th>No</th>
+                    <th class="column2">Publish Name</th>
+                    <th class="column3">Title</th>
+                    <th class="column3">Publish Date</th>
+                    <th class="column2">Status</th>
                     <th>View</th>
+                    <th class="column4">Hapus</th>
                   </tr>
                 </thead>
                 <tbody>{render()}</tbody>

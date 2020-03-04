@@ -49,6 +49,8 @@ export default function Login() {
         alert("Username Tidak Ada");
       } else if (err.response.status === 401) {
         alert("Password salah");
+      } else {
+        alert("Akun ada di block Hubungi Admin !!");
       }
     }
     // console.log(result.data);
