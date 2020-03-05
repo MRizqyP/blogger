@@ -18,6 +18,7 @@ import LISTARTIKEL from "./component/admin/listartikel";
 import VIEWARTIKEL from "./component/user/liatartikel";
 import ARTIKEL from "./component/user/allartikel";
 import GUESTARTIKEL from "./component/user/guestartikel";
+import ABOUT from "./component/mainarea";
 
 const token = JSON.parse(sessionStorage.getItem("persisted_state_hook:token"));
 
@@ -30,7 +31,7 @@ const routing = (
             return (
               <>
                 <Switch>
-                  <Route exact path="/" component={App} />
+                  <Route exact path="/" component={ABOUT} />
                   <Route path="/login" component={LOGIN} />
                   <Route path="/register" component={REGISTER} />
                   <Route path="/artikel" component={ARTIKEL} />

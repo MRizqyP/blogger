@@ -128,21 +128,23 @@ function Dashboard(props) {
               <div class="media">
                 <div class="media-body">
                   {komentars.map((komen, j) => {
-                    return (
-                      <>
-                        <h4 class="media-heading user_name mb-2" key={j}>
-                          {komen.user.name}
-                        </h4>
-                        {komen.isikomen}
-                        <p class="mb-3">
-                          <small>
-                            <a>Like</a> - Share
-                            <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                          </small>
-                        </p>
-                        <hr />
-                      </>
-                    );
+                    if (komen.status === true) {
+                      return (
+                        <>
+                          <h4 class="media-heading user_name mb-2" key={j}>
+                            {komen.user.name}
+                          </h4>
+                          {komen.isikomen}
+                          <p class="mb-3">
+                            <small>
+                              <a>Like</a> - Share
+                              <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            </small>
+                          </p>
+                          <hr />
+                        </>
+                      );
+                    }
                   })}
                 </div>
               </div>
@@ -164,8 +166,8 @@ function Dashboard(props) {
               <div class="posts">{render()}</div>
 
               {/* <aside class="sidebar">
-              <h1>Sidebar</h1>
-            </aside> */}
+                <h1>asdasd</h1>
+              </aside> */}
             </div>
           </section>
         </div>

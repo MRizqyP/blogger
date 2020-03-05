@@ -1,6 +1,6 @@
-/* @import url(./fonts.css);
-@import url(./partials/_variables.css);
-@import url(./partials/_globe.css); */
+@import url(./assets/css/fonts.css);
+@import url(./assets/css/partials/_variables.css);
+@import url(./assets/css/partials/_globe.css);
 
 * {
   padding: 0;
@@ -20,7 +20,7 @@ body {
   z-index: -1;
 }
 
-.container {
+.containerlog {
   width: 100vw;
   height: 80vh;
   display: grid;
@@ -305,9 +305,9 @@ a:hover {
   grid-template-columns: 70% 30%;
 }
 
-/* .site-content .posts {
+.site-content .posts {
   width: 100%;
-} */
+}
 
 .flex-row {
   display: flex;
@@ -472,6 +472,86 @@ a:hover {
 
 .fa {
   text-transform: uppercase;
+}
+
+.site-content .sidebar .popular-artikel h2 {
+  padding-top: 8rem;
+}
+
+.site-content .sidebar .popular-artikel .post-info {
+  padding: 0.4rem 0.25rem !important;
+  bottom: 0rem !important;
+  left: 6rem !important;
+  border-radius: 0rem !important;
+  background: white !important;
+}
+
+.site-content .sidebar .popular-artikel .post-info span {
+  font-size: 14px;
+}
+
+.site-content .sidebar .newsletter {
+  padding-top: 5rem;
+  /* padding-bottom: 3rem; */
+}
+
+.site-content .sidebar .newsletter .form-element {
+  padding-top: 2.5rem;
+  /* padding: 0.5rem 2rem; */
+}
+
+.site-content .sidebar .newsletter .input-element {
+  width: 80%;
+  height: 3.5rem;
+  padding-top: 5rem;
+  padding: 0.3rem 0.5rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.site-content .sidebar .newsletter .form-btn {
+  border-radius: 0;
+  padding: 0.8rem 32%;
+
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  margin: 1rem 0;
+}
+
+.site-content .sidebar .to-social-follow {
+  width: 300px;
+  padding: 10px;
+  margin: 0;
+}
+
+.site-content .sidebar .to-social-follow .fa {
+  font-size: 29px;
+  padding: 16px;
+  text-align: center;
+  margin: 5px 2px;
+  width: 30%;
+  text-decoration: none;
+  color: #fff;
+}
+.to-social-follow .fa:hover {
+  opacity: 0.7;
+}
+.to-social-follow .fa-facebook {
+  background: #3b5998;
+}
+.to-social-follow .fa-twitter {
+  background: #55acee;
+}
+.to-social-follow .fa-google {
+  background: #dd4b39;
+}
+.to-social-follow .fa-linkedin {
+  background: #007bb5;
+}
+.to-social-follow .fa-youtube {
+  background: #b00;
+}
+.to-social-follow .fa-instagram {
+  background: #125688;
 }
 @media screen and (max-width: 1050px) {
   .container {

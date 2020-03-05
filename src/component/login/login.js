@@ -75,7 +75,7 @@ export default function Login() {
   return (
     <div>
       <img class="wave" src="img/login/wave.png" />
-      <div class="container">
+      <div class="containerlog">
         <div class="img">
           <img src="img/login/signinn.svg" />
         </div>

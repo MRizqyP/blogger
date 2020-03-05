@@ -31,6 +31,20 @@ function Dashboard() {
   }, []);
   console.log(data);
 
+  async function hapus(no) {
+    await axios({
+      method: "delete",
+      url: `http://localhost:8085/artikel`,
+      headers: {
+        Authorization: token.token.accessToken
+      },
+      data: {
+        id_artikel: no
+      }
+    });
+    window.location.reload("/listartikel");
+  }
+
   const render = () => {
     return data.map((data, id) => {
       let total_komentar = data.komentars.length;
@@ -70,12 +84,19 @@ function Dashboard() {
           </div>
           <div class="post-title">
             <a>{data.judul}</a>
-            <p>{data.isiartikel}</p>
+            <p>{data.isiartikel.substr(0, 250) + " ..."}</p>
             <Link to={"/viewartikel/" + data.id_artikel}>
               <button class="btn post-btn">
                 Read More <i class="fa fa-arrow-right"></i>
               </button>
             </Link>
+            <button
+              type="button"
+              class="btnhapus"
+              onClick={() => hapus(data.id_artikel)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       );

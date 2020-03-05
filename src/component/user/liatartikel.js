@@ -171,79 +171,155 @@ function Dashboard(props) {
               <div class="media">
                 <div class="media-body">
                   {komentars.map((komen, j) => {
-                    return (
-                      <>
-                        <h4 class="media-heading user_name mb-2" key={j}>
-                          {komen.user.name}
-                        </h4>
-                        {komen.isikomen}
-                        <p class="mb-3">
-                          <small>
-                            <a>Like</a> - Share
-                            <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            {(() => {
-                              if (
-                                token.token.admin === true ||
-                                komen.user.id_user === token.token.id
-                              ) {
-                                return (
-                                  <Link>
-                                    <i
-                                      class="pull-right"
-                                      className="fa fa-trash"
-                                      aria-hidden="true"
-                                      onClick={() =>
-                                        deleteComment(komen.id_komentar)
-                                      }
-                                    >
-                                      Delete
-                                    </i>
-                                  </Link>
-                                );
-                              }
-                            })()}
-                            {(() => {
-                              if (
-                                komen.status === true &&
-                                token.token.admin === true
-                              ) {
-                                return (
-                                  <Link>
-                                    <i
-                                      class="pull-right"
-                                      aria-hidden="true"
-                                      onClick={() =>
-                                        hideComment(komen.id_komentar)
-                                      }
-                                    >
-                                      Hide
-                                    </i>
-                                  </Link>
-                                );
-                              } else if (
-                                komen.status === false &&
-                                token.token.admin === true
-                              ) {
-                                return (
-                                  <Link>
-                                    <i
-                                      class="pull-right"
-                                      aria-hidden="true"
-                                      onClick={() =>
-                                        showComment(komen.id_komentar)
-                                      }
-                                    >
-                                      Show
-                                    </i>
-                                  </Link>
-                                );
-                              }
-                            })()}
-                          </small>
-                        </p>
-                        <hr />
-                      </>
-                    );
+                    if (komen.status === true) {
+                      return (
+                        <>
+                          <h4 class="media-heading user_name mb-2" key={j}>
+                            {komen.user.name}
+                          </h4>
+                          {komen.isikomen}
+                          <p class="mb-3">
+                            <small>
+                              <a>Like</a> - Share
+                              <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                              {(() => {
+                                if (
+                                  token.token.admin === true ||
+                                  komen.user.id_user === token.token.id
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        className="fa fa-trash"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          deleteComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Delete
+                                      </i>
+                                    </Link>
+                                  );
+                                }
+                              })()}
+                              {(() => {
+                                if (
+                                  komen.status === true &&
+                                  token.token.admin === true
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          hideComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Hide
+                                      </i>
+                                    </Link>
+                                  );
+                                } else if (
+                                  komen.status === false &&
+                                  token.token.admin === true
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          showComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Show
+                                      </i>
+                                    </Link>
+                                  );
+                                }
+                              })()}
+                            </small>
+                          </p>
+                          <hr />
+                        </>
+                      );
+                    } else if (token.token.admin === true) {
+                      return (
+                        <>
+                          <h4 class="media-heading user_name mb-2" key={j}>
+                            {komen.user.name}
+                          </h4>
+                          {komen.isikomen}
+                          <p class="mb-3">
+                            <small>
+                              <a>Like</a> - Share
+                              <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                              {(() => {
+                                if (
+                                  token.token.admin === true ||
+                                  komen.user.id_user === token.token.id
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        className="fa fa-trash"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          deleteComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Delete
+                                      </i>
+                                    </Link>
+                                  );
+                                }
+                              })()}
+                              {(() => {
+                                if (
+                                  komen.status === true &&
+                                  token.token.admin === true
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          hideComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Hide
+                                      </i>
+                                    </Link>
+                                  );
+                                } else if (
+                                  komen.status === false &&
+                                  token.token.admin === true
+                                ) {
+                                  return (
+                                    <Link>
+                                      <i
+                                        class="pull-right"
+                                        aria-hidden="true"
+                                        onClick={() =>
+                                          showComment(komen.id_komentar)
+                                        }
+                                      >
+                                        Show
+                                      </i>
+                                    </Link>
+                                  );
+                                }
+                              })()}
+                            </small>
+                          </p>
+                          <hr />
+                        </>
+                      );
+                    }
                   })}
                 </div>
               </div>

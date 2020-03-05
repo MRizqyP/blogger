@@ -81,7 +81,7 @@ export default function Userlist() {
       return (
         <tr key={id}>
           <td text-align="center">{no++}</td>
-          <td>{data.user.name}</td>
+          <td class="text-uppercase">{data.user.name}</td>
           <td>{data.judul}</td>
           <td> {moment(data.createdAt).format("DD / MMMM / YYYY")}</td>
           <td>

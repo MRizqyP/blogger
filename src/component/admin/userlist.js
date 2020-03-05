@@ -66,8 +66,8 @@ export default function Userlist() {
         return (
           <tr key={id}>
             <td text-align="center">{no++}</td>
-            <td>{data.name}</td>
-            <td>{data.username}</td>
+            <td class="text-uppercase">{data.name}</td>
+            <td class="text-uppercase">{data.username}</td>
             <td>{data.email}</td>
             <td>
               <center>
