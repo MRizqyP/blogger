@@ -50,13 +50,10 @@ function Dashboard() {
       let total_komentar = data.komentars.length;
       return (
         <div class="post-content" key={id}>
-          <hr />
-          <p> List Artikel</p>
-          <hr />
           <div class="post-image">
             <div>
               <center>
-                <img src="./img/gambar.jpg" alt="" class="img"></img>
+                <img src={data.img} alt="" class="img"></img>
               </center>
             </div>
             <div class="post-info flex-row">
@@ -107,13 +104,19 @@ function Dashboard() {
     <div>
       <div class="limiter">
         <Link to="/buatartikel">
-          <button class="btnartikel"> Buat Artikel</button>
+          <button class="btnartikel"> Create Artikel</button>
         </Link>
 
         <div>
           <section>
             <div class="site-content">
-              <div class="posts">{render()}</div>
+              <div class="posts">
+                <hr />
+                <p> List Artikel</p>
+                <hr />
+
+                {render()}
+              </div>
 
               {/* <aside class="sidebar">
               <h1>Sidebar</h1>

@@ -119,7 +119,7 @@ export default function Userlist() {
                 <thead>
                   <tr class="table100-head">
                     <th class="column1">No</th>
-                    <th class="column2">Nama</th>
+                    <th class="column2">Name</th>
                     <th class="column3">Username</th>
                     <th>Email</th>
                     <th>Status</th>

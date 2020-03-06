@@ -46,11 +46,11 @@ export default function Login() {
     } catch (err) {
       setStatus(err.response.status);
       if (err.response.status === 404) {
-        alert("Username Tidak Ada");
+        alert("Username Not Found");
       } else if (err.response.status === 401) {
-        alert("Password salah");
+        alert("Invalid Password");
       } else {
-        alert("Akun ada di block Hubungi Admin !!");
+        alert("Your Account Blocked !!");
       }
     }
     // console.log(result.data);

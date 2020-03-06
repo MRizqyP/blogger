@@ -48,7 +48,7 @@ function Dashboard() {
             <div class="post-image">
               <div>
                 <center>
-                  <img src="./img/gambar.jpg" alt="" class="img"></img>
+                  <img src={data.img} alt="" class="img"></img>
                 </center>
               </div>
               <div class="post-info flex-row">
@@ -89,7 +89,7 @@ function Dashboard() {
             <div class="post-image">
               <div>
                 <center>
-                  <img src="./img/gambar.jpg" alt="" class="img"></img>
+                  <img src={data.img} alt="" class="img"></img>
                 </center>
               </div>
               <div class="post-info flex-row">

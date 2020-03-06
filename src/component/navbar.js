@@ -22,9 +22,11 @@ function App() {
       <header class="header_area">
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
-              <img src="/logokinyot.png" alt="logo" width="60%" />
-            </a>
+            <Link to="/">
+              <a class="navbar-brand" href="#">
+                <img src="/logokinyot.png" alt="logo" width="60%" />
+              </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -78,9 +80,11 @@ function App() {
       <header class="header_area">
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
-              <img src="/logokinyot.png" alt="logo" width="60%" />
-            </a>
+            <Link to="/adminpage">
+              <a class="navbar-brand" href="#">
+                <img src="/logokinyot.png" alt="logo" width="60%" />
+              </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -130,9 +134,11 @@ function App() {
       <header class="header_area">
         <div className="main-menu">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
-              <img src="/logokinyot.png" alt="logo" width="60%" />
-            </a>
+            <Link to="/">
+              <a class="navbar-brand" href="#">
+                <img src="/logokinyot.png" alt="logo" width="60%" />
+              </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"

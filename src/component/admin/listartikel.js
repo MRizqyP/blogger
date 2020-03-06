@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import axios from "axios";
 import moment from "moment";
+import { Link } from "react-router-dom";
 // import "../assets/css/bootstrap.min.css";
 import "./bootstrap.min.css";
 import "./main.css";
@@ -141,6 +142,9 @@ export default function Userlist() {
   return (
     <div>
       <div class="limiter">
+        <Link to="/buatartikel">
+          <button class="btnartikel"> Create Artikel</button>
+        </Link>
         <center>
           <p>
             <h2>List Artikel</h2>
@@ -158,7 +162,7 @@ export default function Userlist() {
                     <th class="column3">Publish Date</th>
                     <th class="column2">Status</th>
                     <th>View</th>
-                    <th class="column4">Hapus</th>
+                    <th class="column4">Delete</th>
                   </tr>
                 </thead>
                 <tbody>{render()}</tbody>

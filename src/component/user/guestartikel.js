@@ -63,7 +63,7 @@ function Dashboard(props) {
             <hr />
             <div>
               <center>
-                <img src="/gambar.jpg" alt="" class="img"></img>
+                <img src={data.img} alt="" class="img"></img>
               </center>
             </div>
           </div>

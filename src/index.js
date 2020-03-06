@@ -19,6 +19,8 @@ import VIEWARTIKEL from "./component/user/liatartikel";
 import ARTIKEL from "./component/user/allartikel";
 import GUESTARTIKEL from "./component/user/guestartikel";
 import ABOUT from "./component/mainarea";
+import ABOUTUSER from "./component/user/mainareauser";
+import COBA from "./component/coba";
 
 const token = JSON.parse(sessionStorage.getItem("persisted_state_hook:token"));
 
@@ -36,6 +38,7 @@ const routing = (
                   <Route path="/register" component={REGISTER} />
                   <Route path="/artikel" component={ARTIKEL} />
                   <Route path="/viewartikel/:id" component={GUESTARTIKEL} />
+                  <Route path="/coba" component={COBA} />
                   <Route component={Notfound} />
                 </Switch>
               </>
@@ -44,7 +47,7 @@ const routing = (
             return (
               <>
                 <Switch>
-                  <Route exact path="/" component={App} />
+                  <Route exact path="/" component={ABOUTUSER} />
                   <Route path="/dashboard" component={DASHBOARD} />
                   <Route path="/buatartikel" component={MAKEARTIKEL} />
                   <Route path="/listcontent" component={USERCONTENT} />
@@ -57,10 +60,11 @@ const routing = (
           } else if (token.token.admin === true) {
             return (
               <Switch>
-                <Route exact path="/adminpage" component={ADMINPAGE} />
+                <Route exact path="/adminpage" component={ABOUTUSER} />
                 <Route path="/userlist" component={USERLIST} />
                 <Route path="/listartikel" component={LISTARTIKEL} />
                 <Route path="/viewartikel/:id" component={VIEWARTIKEL} />
+                <Route path="/buatartikel" component={MAKEARTIKEL} />
                 <Route component={Notfound} />
               </Switch>
             );

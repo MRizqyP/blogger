@@ -23,7 +23,7 @@ const Register = props => {
           email: data.email,
           password: data.password
         })
-        .then(alert("Regis Berhasil"));
+        .then(alert("Regis Success"));
       console.log(data);
       setRedirect({ redirect: true });
     } catch (err) {
@@ -46,10 +46,10 @@ const Register = props => {
         </div>
         <div class="register-content">
           <form onSubmit={e => e.preventDefault()}>
-            <h2 class="title">Formulir Pendaftaran</h2>
+            <h2 class="title">Register</h2>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="namalengkap">Nama Panggilan</label>
+                <label for="namalengkap">Nick Name</label>
                 <input
                   name="nama"
                   type="text"
@@ -62,6 +62,8 @@ const Register = props => {
                     }
                   })}
                 />
+
+                <span>{errors.nama && errors.nama.message}</span>
               </div>
               <div class="form-group col-md-6">
                 <label for="usernmae">Username</label>
@@ -77,6 +79,8 @@ const Register = props => {
                     }
                   })}
                 />
+
+                <span>{errors.username && errors.username.message}</span>
               </div>
             </div>
             <div class="form-group">
@@ -93,6 +97,8 @@ const Register = props => {
                   }
                 })}
               />
+
+              <span>{errors.email && errors.email.message}</span>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
@@ -105,6 +111,8 @@ const Register = props => {
                   minLength: 8
                 })}
               />
+
+              {errors.password && "Form Harus di isi dan lebih dari 6 huruf"}
             </div>
             <div class="form-group mb-5">
               <label for="cpassword">Confirm Password</label>
@@ -117,6 +125,8 @@ const Register = props => {
                   validate: value => value === getValues().password
                 })}
               />
+
+              <span>{errors.cPassword && "Password tidak sama"}</span>
             </div>
             <button
               type="submit"
